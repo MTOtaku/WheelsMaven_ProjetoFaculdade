@@ -24,10 +24,6 @@ public class Payment {
         return desconto;
     }
 
-    public String getFormaPagamento() {
-        return formaPagamento;
-    }
-
     public void calcularTotalPagamento(Aluguel aluguel) {
         int dias = aluguel.getNumberOfDays();
         double precoBase = aluguel.getBike().calcularCusto(dias);

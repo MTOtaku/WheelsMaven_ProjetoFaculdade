@@ -96,22 +96,33 @@ public class Menu {
 
             String cep;
             while (true) {
-                cep = JOptionPane.showInputDialog("CEP:");
+                cep = JOptionPane.showInputDialog("CEP (formato: 12345-678):");
                 if (cep == null) return;
-                if (cep.matches("\\d+")) break;
-                JOptionPane.showMessageDialog(null, "CEP inválido. Digite apenas números.");
+                if (cep.matches("^\\d{5}-\\d{3}$")) break;
+                JOptionPane.showMessageDialog(null, "CEP inválido. Use o formato 12345-678.");
             }
 
-            String telefone = JOptionPane.showInputDialog("Telefone:");
-            if (telefone == null || telefone.trim().isEmpty()) return;
+            String telefone;
+            while (true) {
+                telefone = JOptionPane.showInputDialog("Telefone (formato: (12)123456789):");
+                if (telefone == null) return;
+                if (telefone.matches("^\\(\\d{2}\\)\\d{8,9}$")) break;
+                JOptionPane.showMessageDialog(null, "Telefone inválido. Use o formato (12)123456789.");
+            }
 
-            String email = JOptionPane.showInputDialog("Email:");
-            if (email == null || email.trim().isEmpty()) return;
+            String email;
+            while (true) {
+                email = JOptionPane.showInputDialog("Email:");
+                if (email == null) return;
+                if (email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) break;
+                JOptionPane.showMessageDialog(null, "Email inválido. Digite um e-mail válido.");
+            }
 
             Cliente cliente = new Cliente(nome, cep, telefone, email);
             Cliente.listaClientes.add(cliente);
             JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!");
         });
+
 
 
         btnCadastrarBike.addActionListener(e -> {
