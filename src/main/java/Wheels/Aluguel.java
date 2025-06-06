@@ -8,18 +8,12 @@ public class Aluguel {
     private Bike bike = null;
     private int numberOfDays = 0;
 
-    private static int hireCount = 001;
-
     public Aluguel(Date sDate, int numDays, Bike bikeToHire, Cliente cust){
         startDate = sDate;
         numberOfDays = numDays;
         cliente = cust;
         bike = bikeToHire;
 
-    }
-
-    public Cliente getCustomer(){
-        return cliente;
     }
 
     public Bike getBike(){
@@ -30,8 +24,5 @@ public class Aluguel {
         return numberOfDays;
     }
 
-    public Date getStartDate(){
-        return startDate;
-    }
 }
 

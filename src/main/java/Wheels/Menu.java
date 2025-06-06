@@ -224,7 +224,7 @@ public class Menu {
                     JOptionPane.QUESTION_MESSAGE,
                     null,
                     Bike.listaBicicletas.toArray(),
-                    Bike.listaBicicletas.get(0)
+                    Bike.listaBicicletas.getFirst()
             );
             if (bike == null) return;  // Cancelado
 

@@ -1,9 +1,7 @@
 package Wheels;
 
 public class Payment {
-    private Cliente cliente;
-    private static int paymentCount = 1;
-
+    private final Cliente cliente;
     private String formaPagamento;
     private double valorTotal;
     private double desconto;
@@ -39,8 +37,7 @@ public class Payment {
             desconto = 0.0;
         }
 
-        double valorComDesconto = precoBase - (precoBase * desconto);
-        valorTotal = valorComDesconto;
+        valorTotal = precoBase - (precoBase * desconto);
 
         emitirRecibo(aluguel);
     }

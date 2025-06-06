@@ -7,9 +7,9 @@ public class Bike {
 
     public static List<Bike> listaBicicletas = new ArrayList<>();
 
-    private int numero;
-    private double deposito;
-    private double diaria;
+    private final int numero;
+    private final double deposito;
+    private final double diaria;
 
     // Construtor
     public Bike(int numero, double deposito, double diaria) {
