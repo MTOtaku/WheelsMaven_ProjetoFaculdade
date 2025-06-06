@@ -23,32 +23,6 @@ public class Bike {
         return numero;
     }
 
-    public double getDeposito() {
-        return deposito;
-    }
-
-    public double getDiaria() {
-        return diaria;
-    }
-
-    // Buscar bicicleta por número
-    public static Bike buscarPorNumero(int numero) {
-        for (Bike b : listaBicicletas) {
-            if (b.getNumero() == numero) {
-                System.out.println("Bicicleta com o número '" + numero + "' encontrada.\n");
-                return b;
-            }
-        }
-        System.out.println("Bicicleta com o número '" + numero + "' não encontrada.\n");
-        return null;
-    }
-
-    // Mostrar detalhes
-    public void mostrarDetalhes() {
-        System.out.println("Detalhes da Bicicleta Nº " + numero);
-        System.out.println("Depósito: " + deposito);
-        System.out.println("Diária: " + diaria + "\n");
-    }
 
     public double calcularCusto(int dias) {
         double custo = deposito + (diaria * dias);

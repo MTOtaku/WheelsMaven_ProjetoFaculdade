@@ -7,7 +7,6 @@ public class Aluguel {
     private Cliente cliente = null;
     private Bike bike = null;
     private int numberOfDays = 0;
-    private int hireId = 0;
 
     private static int hireCount = 001;
 
@@ -16,7 +15,7 @@ public class Aluguel {
         numberOfDays = numDays;
         cliente = cust;
         bike = bikeToHire;
-        hireId = hireCount++;
+
     }
 
     public Cliente getCustomer(){
